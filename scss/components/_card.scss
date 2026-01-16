@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// ==========================
+// CARD COMPONENT
+// ==========================
+.card {
+  background-color: v.$color-white;
+  border-radius: v.$radius-md;
+  padding: v.$space-md;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  font-family: v.$font-base;
+  color: v.$color-text;
+
+  &__title {
+    font-size: v.$font-size-title;
+    margin-bottom: v.$space-sm;
+  }
+
+  &__text {
+    font-size: v.$font-size-base;
+    color: v.$color-secondary;
+  }
+
+  // Responsive behavior
+  @include m.respond-to(mobile) {
+    padding: v.$space-sm;
+
+    &__title {
+      font-size: 1rem;
+    }
+  }
+}
